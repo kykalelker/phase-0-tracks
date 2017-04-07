@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trial Form</title>
+</head>
+<body>
+  <form name="Avengers" action="success.html" method="post">
+    <fieldset>
+      <div>
+        <label>Name</label>
+        <input type="text" name="name"> 
+      </div>  
+      <div>
+        <label>Email</label>
+        <input type="email" name="email">
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" name="password">
+      </div>
+    </fieldset>
+    <fieldset>
+      <div>
+        <label>Favorite Avenger:</label>
+        <select name="avenger">
+        <option value="Thor">Thor</option>
+        <option value="Hulk">Hulk</option>
+        <option value="Captain America">Captain America</option>
+        <option value="Iron Man">Iron Man</option>
+        </select>
+      </div>
+      <div>
+        <label>Why is he your favorite?</label>
+        <textarea name="reason">I like him because...</textarea>
+      </div>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
