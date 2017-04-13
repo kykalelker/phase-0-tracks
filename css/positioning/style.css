@@ -1,17 +1,19 @@
-#octo {
-  position: fixed;
-  margin-left: 45%;
-  margin-top: 150px
 
+#octo{
+  position: fixed;
+   margin-left: 45%;
+   margin-top: 100px;
 }
-#hattie {
-    position: absolute;
-    left: 45%;
-}
-#glassie {
+
+#hattie{
   position: absolute;
-    left: 48%;
-    top: 256px;
-    z-index: 1;
-  
+   margin-left: 43%;
+  z-index: 10
+}
+
+#glassie{
+  position: absolute;
+   margin-left: 49%;
+  margin-top: 200px;
+  z-index: 10
 }
