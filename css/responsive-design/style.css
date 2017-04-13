@@ -45,3 +45,17 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 475px) {
+ #jasmine {
+   font-size:90%;
+ }
+ }
+
+ @media screen and (max-width: 330px) {
+ img {
+   width:75%
+
+   
+ }
+}
