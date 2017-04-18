@@ -12,5 +12,5 @@ if hamster_age.empty?
   hamster_age = nil
 else hamster_age = hamster_age.to_i
 end
-puts 5+hamster_age
+
 
