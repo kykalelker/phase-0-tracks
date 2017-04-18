@@ -1,4 +1,15 @@
 Elevator Algorithm:
+- Enter elevator
+- Look at button panel in the elevator and take note of the number of floors
+- Ask which floor user needs to get off at
+- Until a button is pressed or until you have attempted 5 times
+	- If response falls in the floor range as indicated by the button panel
+		- press floor no.
+	- else if response is one of the other buttons on panel
+		- press letter button
+	- otherwise ask which floor again
+- Do nothing
+	  
 
 
 
