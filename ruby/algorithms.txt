@@ -1,0 +1,33 @@
+Elevator Algorithm:
+- Enter elevator
+- Look at button panel in the elevator and take note of the number of floors
+- Ask which floor user needs to get off at
+- Until a button is pressed or until you have attempted 5 times
+	- If response falls in the floor range as indicated by the button panel
+		- press floor no.
+	- else if response is one of the other buttons on panel
+		- press letter button
+	- otherwise ask which floor again
+- Do nothing
+	  
+
+
+
+Diaper Changer Algorithm:
+
+- check baby’s diaper
+- if time passed since last diaper change is 3 hours or if diaper is soiled or if diaper is leaking
+	- lay baby on changing mat
+	- take off baby’s pants
+	- open current diaper
+	- until diaper area is clean
+		- use new wipe
+		- clean and wipe diaper area
+		- check if diaper area is clean
+	- Remove and fold-close dirty diaper 
+	- Dry diaper area with napkin
+	- Open and keep new diaper under baby’s bottom
+	- Apply diaper rash cream on diaper area
+	- Close diaper and put on baby’s pants
+	- Throw dirty diaper in diaper pail
+- Play with clean baby
