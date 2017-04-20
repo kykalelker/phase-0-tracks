@@ -1,1 +1,65 @@
-body{background-color: white}
+* {border: 0px red solid;}
+
+header {
+  font-family: cursive;
+  background-color: lightblue;
+  text-align: center;
+}
+
+body {
+  width: 960px; 
+  display: block;
+  margin: 0px;
+}
+
+ h1 {
+  display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline wavy white;
+}
+.column-1 {
+  margin: 10px 22px;
+  display: inline-block;
+  background-color: lightpink;
+  width: 45%;
+  height: 1000px;
+  vertical-align: top;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.column-2 {
+  margin: 10px 22px;
+  display: inline-block;
+  background-color: lightgreen;
+  width: 45%;
+  height: 1000px;
+  vertical-align: top;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+.column-1, .column-2 {height: 2000px;}
+}
+
+footer {
+  display: block;
+  border: 0px black solid;
+  text-align: center;
+  background-color: lightgreen;
+  padding: 5px;
+  margin: 10px;
+}
