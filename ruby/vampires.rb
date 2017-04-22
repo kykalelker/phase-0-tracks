@@ -1,3 +1,8 @@
+puts "Good Day! How many employees do you want to process today?"
+empl_no = gets.chomp.to_i
+count = 1
+while count <=empl_no
+  puts "Employee No. #{count}"
 puts "What is your name?"
 newhire_name = gets.chomp
 puts "How old are you?"
@@ -32,3 +37,6 @@ elsif !(age<=100) && !(wants_garlicbread || wants_insurance)
   puts "Almost certainly a vampire."
 else puts "Results Inconclusive."   
 end 
+
+count += 1
+end
