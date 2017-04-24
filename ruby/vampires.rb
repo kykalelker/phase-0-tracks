@@ -1,6 +1,7 @@
 puts "Good Day! How many employees do you want to process today?"
 empl_no = gets.chomp.to_i
 count = 0
+# Collect employee data
 while count < empl_no
   count += 1
   puts "Employee No. #{count}"
@@ -35,10 +36,9 @@ while count < empl_no
   else puts "Sorry, I don't understand"
   end
 
+  # Collect data about employee's allergies
   puts "We need to know about all of your allergies. Type 'done' when you're done listing them."
   allergy = gets.chomp 
-  
-  
   until allergy == "done" || allergy == "none"
     if allergy == "sunshine"
       puts "#{newhire_name} is probably a vampire."
@@ -46,6 +46,8 @@ while count < empl_no
     end   
     allergy = gets.chomp
   end
+
+  # Check if employee is a potential vampire
   if !(allergy == "sunshine")
     if (newhire_name == "DrakeCula") || (newhire_name == "TuFang")
     puts "#{newhire_name} is definitely a vampire."
@@ -60,3 +62,5 @@ while count < empl_no
   else next
   end
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
