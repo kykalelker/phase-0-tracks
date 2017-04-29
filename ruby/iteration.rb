@@ -1,5 +1,5 @@
 
-
+=begin
 # Release 0
 def print_name
 name1 = "Anna"
@@ -8,10 +8,8 @@ puts "Hello teammates"
 yield [name1,name2]
 end
 print_name {|name1,name2| puts "Good teamwork, #{name1} and #{name2}!"}
+=end
 
-=begin
-# Release 1
-#Create an array and a hash
 student_name = ["Jim", "Jack", "Joe"]
 
 student_marks = {
@@ -40,7 +38,7 @@ p student_name
 #Initialize new array
 student_caps =[]
 #Use .map on array
-stand_caps = student_name.map {|student| student.upcase}
+student_caps = student_name.map {|student| student.upcase}
 #Print new array to screen
 p student_caps
 p student_name
@@ -50,7 +48,7 @@ p student_marks
 #Initialize new hash
 stud_performance = {}
 #Use .map on hash
-stud_performance = student_marks.map {|student, marks| [student, marks.upcase]}
+stud_performance = student_marks.map {|student, marks| [student.upcase, marks]}
 #Print new hash to screen
 p stud_performance
 
@@ -64,6 +62,7 @@ p student_name
 
 
 
+=begin
 
  # Release 2
 
