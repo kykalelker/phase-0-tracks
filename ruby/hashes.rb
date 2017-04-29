@@ -1,4 +1,62 @@
-#Create a form to capture client details for interior design purposes
+# Release 1
+#Creating a form to capture client details for interior design purposes
+#Initialize hash 
+app_form = {
+  name: "",
+  address: "",
+  email: "",
+  phone: "",
+  fav_blue: "",
+  wallpaper_pref: [],
+  ombre: ""
+}
+#Collect user information
+puts "What is your name?"
+app_form[:name] = gets.chomp
+puts "What is your address?"
+app_form[:address] = gets.chomp
+puts "What is your email?"
+app_form[:email] = gets.chomp
+puts "What is your phone number?"
+app_form[:phone] = gets.chomp.to_i
+puts "What is your favorite shade of blue?"
+app_form[:fav_blue] = gets.chomp
+puts "What kind of wallpaper do you like? Select all that apply. Type done, when done"
+puts wallpaper_options = ["Paisley", "Chevron", "Photorealistic woodsy scenes (with or without squirrels)", "Abstract woodsy scenes (no squirrels)"]
+until (gets.chomp == "done") 
+ app_form[:wallpaper_pref] << gets.chomp
+end
+puts "You think OMBRE is"
+puts ombre_is = ["Fierce", "So last season", "Practically medieval in its appalling irrelevance"]
+ombre_opinion = gets.chomp
+if ombre_opinion == ombre_is[0]
+  app_form[:ombre] = 1
+elsif ombre_opinion == ombre_is[1]
+  app_form[:ombre] = 2
+else app_form[:ombre] = 3
+end
+#Print original hash
+p app_form
+#Update name value in hash
+puts "Would you like to update any field? If yes, which one?"
+field = gets.chomp.to_sym
+puts "What would you like the value to be?"
+#Using a variable as a key in a hash
+app_form[field] = gets.chomp
+#Add new key-value pair
+app_form[:hired] = true
+#Re-print updated hash
+p app_form
+#Add 2 entries from the hash does not affect original hash
+puts app_form[:name]+app_form[:email]
+p app_form
+
+
+
+
+
+
+# Release 2: Create a form to capture client details for interior design purposes
 
 #Define client data hash with essential keys
 client_data = {
@@ -50,4 +108,4 @@ end
 
 #Print updated hash to the screen
 puts "Here are all your most updated details"
-p client_data
+
