@@ -1,5 +1,4 @@
 
-=begin
 # Release 0
 def print_name
 name1 = "Anna"
@@ -8,7 +7,7 @@ puts "Hello teammates"
 yield [name1,name2]
 end
 print_name {|name1,name2| puts "Good teamwork, #{name1} and #{name2}!"}
-=end
+
 
 student_name = ["Jim", "Jack", "Joe"]
 
@@ -61,34 +60,43 @@ student_name.map! {|name1| name1.upcase}
 p student_name
 
 
-
-=begin
-
- # Release 2
-
+# Release 2
+ 
+#Working with Array methods
 # 1. Deleting numbers in an array that are less than 3.
 numbers = [1, 2, 3, 4, 5 , 6, 7, 8, 9, 10]
-numbers.delete_if {|number| number < 3}
+p numbers.delete_if {|number| number < 3}
 
-# 2. 
+# 2. Keeping numbers in an array that are less than 3
 numbers = [1, 2, 3, 4, 5 , 6, 7, 8, 9, 10]
-numbers.keep_if {|number| number < 3}
+p numbers.keep_if {|number| number < 3}
 
-# 3.
+# 3. Keeping numbers in an array that are greater than 5
 numbers = [1, 2, 3, 4, 5 , 6, 7, 8, 9, 10]
-numbers.keep_if {|number| number < 10 && number > 6}
+p numbers.take_while {|number| number > 5}
 
-# 4.
+# 4. Deleting numbers in an array that are greater than 7
 numbers = [1, 2, 3, 4, 5 , 6, 7, 8, 9, 10]
-numbers.reject {|number| number < 7}
+p numbers.reject {|number| number > 7}
+#alternate method
+numbers = [1, 2, 3, 4, 5 , 6, 7, 8, 9, 10]
+p numbers.drop_while {|number| number < 7}
 
-# 1. (Hash)
-student_marks = {
-  Jim: 89, 
-  Jack: 73,
-  Joe: 79
-}
-student_marks.flatten {|name, marks|}
+#Working with Hash methods
+# 1. Deleting numbers in a hash that are greater than 3
+alphanum = {a: 1, b: 2, c: 3, d: 4, e: 5}
+p alphanum.delete_if {|alpha, num| num > 3}
 
-# 2. (Hash)
-=end
+# 2. Keeping numbers in a hash that are greater than 3
+alphanum = {a: 1, b: 2, c: 3, d: 4, e: 5}
+p alphanum.keep_if {|alpha, num| num > 3}
+
+# 3. Keeping numbers in a hash that are greater than 5
+alphanum = {a: 1, b: 2, c: 3, d: 4, e: 5}
+p alphanum.select {|alpha, num| alpha > :d}
+
+# 4. Deleting numbers in a hash that are greater than 7
+alphanum = {a: 1, b: 2, c: 3, d: 4, e: 5}
+p alphanum.reject {|alpha, num| alpha > :d}
+
+
