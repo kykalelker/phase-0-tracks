@@ -1,3 +1,7 @@
+# Create a hash of actors containing the following information: 
+# their nationality(hash), name (hash) their age, top performances (hash) 
+# and the memorable characters they've played (arrays)
+
 actors = {
   american: {
     bryan_cranston: {
@@ -15,7 +19,7 @@ actors = {
         the_station_agent: "Finbar McBride", 
         game_of_thrones: "Tyrion Lannister"
         },
-        memorable_characters: "The Imp"
+        memorable_characters: ["The Imp"]
     }
   },
   british: {
@@ -26,7 +30,7 @@ actors = {
         chance: "Eldon Chance",
         veep: "Tom James"
         },
-        memorable_characters: "House"
+        memorable_characters: ["House"]
     },
     david_tennant: {
       age: 46,
@@ -69,3 +73,15 @@ actors = {
   } 
 }
 p actors
+
+# Print out examples of nested data
+# 1. Print Heisenberg
+puts actors[:american][:bryan_cranston][:memorable_characters][0]
+# 2. Print Michael Burry
+puts actors[:british][:christian_bale][:top_performances][:the_big_short]
+# 3. Print The Huntsman
+puts actors[:australian][:chris_hemsworth][:memorable_characters][1]
+# 4. Print David tennant's age
+puts actors[:british][:david_tennant][:age]
+# 5. Print Tom James
+puts actors[:british][:hugh_laurie][:top_performances][:veep]
