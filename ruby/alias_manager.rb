@@ -45,24 +45,41 @@ end
 
   
 #return new name after putting it together again
-def encrypted_fullname (new_fname, new_lname)
+def create_new_fullname (new_fname, new_lname)
 first = new_fname.join.capitalize!
 last = new_lname.join.capitalize!
 new_fullname = first + " " + last 
 end
 
-
-#User interface and driver code
-puts "Type the full name that you want to encrypt:"
-name = gets.chomp
-until name == "quit" || name == "Quit" 
+#driver code
+def encrypted_name (name)
   fullname_array = name.chars
   fname = first_name (fullname_array)
   lname = last_name (fullname_array)
   new_last_name = name_muddler (fname)
   new_first_name = name_muddler (lname)
+  create_new_fullname(new_first_name, new_last_name)
+end  
+  
+#User interface
+puts "Type the full name that you want to encrypt:"
+name = gets.chomp
+index = 0
+original_name = []
+secret_agent_name = []
+until name == "quit" || name == "Quit" 
+  original_name[index] = name
+  secret_agent_name[index] = encrypted_name(name)
   puts "The encrypted name is:"
-  puts encrypted_fullname(new_first_name, new_last_name)
+  puts secret_agent_name[index]
   puts "Encrypt another full name?"
   name = gets.chomp
+  index +=1
+end
+
+#Final result
+counter = 0
+while counter<original_name.length
+puts "#{original_name[counter]} is also known as #{secret_agent_name[counter]}"
+counter += 1
 end
