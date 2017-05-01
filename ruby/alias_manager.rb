@@ -51,21 +51,18 @@ last = new_lname.join.capitalize!
 new_fullname = first + " " + last 
 end
 
-  
-name = "Ozis Beii"
-name = name.downcase
-fullname_array = name.chars
-fname = first_name (fullname_array)
-lname = last_name (fullname_array)
-new_last_name = name_muddler (fname)
-new_first_name = name_muddler (lname)
-p encrypted_fullname(new_first_name, new_last_name)
 
-=begin
-p fname
-p lname
-p new_first_name
-p first
-p new_last_name
-p last
-=end
+#User interface and driver code
+puts "Type the full name that you want to encrypt:"
+name = gets.chomp
+until name == "quit" || name == "Quit" 
+  fullname_array = name.chars
+  fname = first_name (fullname_array)
+  lname = last_name (fullname_array)
+  new_last_name = name_muddler (fname)
+  new_first_name = name_muddler (lname)
+  puts "The encrypted name is:"
+  puts encrypted_fullname(new_first_name, new_last_name)
+  puts "Encrypt another full name?"
+  name = gets.chomp
+end
