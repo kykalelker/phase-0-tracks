@@ -41,14 +41,13 @@ class Kitty
   end
 
   def drink(liquid)
-    puts "Drinks #{liq}"
+    puts "Drinks #{liquid}"
   end
 
   def initialize
     puts "Initializing new kitty instance ..."
   end 
-
-  end
+end
 
 
 fido = Puppy.new
@@ -61,6 +60,19 @@ human_yrs = 3
 puts fido.dog_years(human_yrs)
 fido.sit
 
+pets = []
+count = 0
+while count < 50
+  pets << Kitty.new
+  count +=1
+end
+
+pets.each do |pet|
+  pet.meow(2)
+  pet.play("wool")
+  pet.drink("milk")
+
+end
 
 
 
