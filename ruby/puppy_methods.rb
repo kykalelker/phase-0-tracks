@@ -5,5 +5,43 @@ class Puppy
     toy
   end
 
+  def speak(number)
+    count = 0
+    while count < number
+      puts "Woof!"
+      count += 1
+    end
+  end
+
+  def roll_over
+    puts "*rolls over*"
+  end
+
+  def dog_years(years)
+    years*7
+  end
+
+  def sit
+    puts "*sits*"
+  end
+
 end
+
+fido = Puppy.new
+ball = "ball"
+fido.fetch(ball)
+
+num = 3
+fido.speak(num)
+
+fido.roll_over
+
+human_yrs = 3
+puts fido.dog_years(human_yrs)
+
+fido.sit
+
+
+
+
 
