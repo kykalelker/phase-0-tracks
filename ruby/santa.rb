@@ -18,28 +18,41 @@ class Santa
 
   def about
     puts "There is a #{@gender} santa who is of #{@ethnicity} ethnicity"
-end
+  end
+
+  def celebrate_method
+    @age += 1
+    puts "This santa just turned #{@age} today! Happy Birthday!"
+  end
+
+  def get_mad_at (reindeer)
+    reindeer_index = @reindeer_ranking.index(reindeer)
+    final_index = @reindeer_ranking.length-1
+    @reindeer_ranking[reindeer_index] = @reindeer_ranking[final_index]
+    @reindeer_ranking[final_index] = reindeer
+    puts @reindeer_ranking
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
 end
 
-=begin
-santaclaus = Santa.new
 
+santaclaus = Santa.new("female", "asian")
 santaclaus.speak
 santaclaus.eat_milk_and_cookies("biscuit")
-santaclaus.initialize
-
-=end
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
-santas << Santa.new("male", "Hmong")
-santas << Santa.new("female","Sami")
-
-santas.length.times do |i|
-  santas[i].about 
-end
+santaclaus.about
+santaclaus.celebrate_method
+santaclaus.get_mad_at ("Vixen")
+santaclaus.gender="male"
+santaclaus.about
+puts "This santa's age is #{santaclaus.age} and ethnicity is #{santaclaus.ethnicity}"
