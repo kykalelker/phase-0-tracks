@@ -1,4 +1,32 @@
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
+  def initialize (gender, ethnicity)
+    puts "Initializing Santa instance ..."
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
+  end
+  
+  def about
+    puts "There is a #{@gender} santa who is of #{@ethnicity} ethnicity"
+  end
+
+=begin
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+=end
 
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
@@ -6,18 +34,6 @@ class Santa
 
   def eat_milk_and_cookies (cookie)
     puts "That was a good #{cookie}!"
-  end
-
-  def initialize (gender, ethnicity)
-    puts "Initializing Santa instance ..."
-   @gender = gender
-    @ethnicity = ethnicity
-    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
-  end
-
-  def about
-    puts "There is a #{@gender} santa who is of #{@ethnicity} ethnicity"
   end
 
   def celebrate_method
@@ -31,18 +47,6 @@ class Santa
     @reindeer_ranking[reindeer_index] = @reindeer_ranking[final_index]
     @reindeer_ranking[final_index] = reindeer
     puts @reindeer_ranking
-  end
-
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
   end
 end
 
