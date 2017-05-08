@@ -20,21 +20,15 @@ describe Game do
   end
 
   it "Inserts unmatched letters in the reject array" do
-    letter = "a"
-  expect(game.unmatch_letter).to eq ["a"]
+  expect(game.unmatch_letter("a")).to eq ["a"]
   end
 
   it "Runs the methods for the game" do
-    letter = "r"
-    expect(game.game_run).to eq false  
-    letter = "h"
-    expect(game.game_run).to eq false 
-    letter = "y"
-    expect(game.game_run).to eq false 
-    letter = "m"
-    expect(game.game_run).to eq false 
-    letter = "e"
-    expect(game.game_run).to eq true 
+    expect(game.game_run("r")).to eq true  
+    expect(game.game_run("h")).to eq true 
+    expect(game.game_run("y")).to eq true 
+    expect(game.game_run("m")).to eq true 
+    expect(game.game_run("e")).to eq true 
   end
 
 
