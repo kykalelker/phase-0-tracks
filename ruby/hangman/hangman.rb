@@ -1,7 +1,7 @@
 =begin
 DC = Driver Code, CM = Class/Method
 
-1.  DC: Ask user1 for word to be guessed
+1.  DC: et word to be guessed
 2.  CM: Break word into individual characters and store in a word_array
 3.  CM: Find word/word_array length and create another array (guess_array) with 
     length no. of ‘__’ in it.
@@ -34,7 +34,7 @@ class Game
     puts "Initializing Game instance ..."
     @word = word
     @length = word.length
-    @guess_num = 2 * word.length
+    @guess_num = word.length + 3
     @word_array = []
     @guess_array = []
     @reject_array = []
@@ -48,42 +48,61 @@ class Game
     @guess_array = Array.new(@length,'_')
   end
 
-
   def match_letter (letter)
-    if !(@word_array.include?(letter))
-      @reject_array << letter
-      puts "You guessed wrong."
+    if @reject_array.include?(letter) || @guess_array.include?(letter)
+      @guess_num = @guess_num
     else
+      @guess_num -= 1
       @word_array.each_index.select do |i| 
         if @word_array[i]==letter
-          position = i
           @guess_array[i] = letter
         end
       end
-      puts "Your current word is:"
-      puts @guess_array.join(" ")
     end
-    @guess_num -= 1
-    @guess_array
+    puts "Your current word is:"
+    puts @guess_array.join(" ")
+    p @guess_array
   end
 
+  def word_match
+    @word_array == @guess_array
+  end
+
+  def unmatch_letter (letter)
+    if !(@word_array.include?(letter))
+      puts "You guessed wrong."
+      if !@reject_array.include?(letter)
+        @reject_array << letter
+      end
+    end
+    p @reject_array
+  end
+
+  def game_run (letter)
+    match_letter(letter)
+    unmatch_letter(letter)
+    if word_match
+      return word_match
+    end
+  end
 end
 
 
 #Driver Code
 
-puts "User 1, what word would you like User 2 to guess?"
-word = gets.chomp
+word = "rhythm"
 hangman = Game.new (word)
 hangman.wordsplit
 hangman.guess_array
-puts "User 2, you have #{hangman.guess_num} chances to guess the correct letters."
-
-puts "Guess a letter: "
-letter = gets.chomp
-hangman.match_letter (letter)
-puts "You have #{hangman.guess_num} chances left. Guess again"
-
-
-
-
+while hangman.guess_num > 0 
+  puts "You have #{hangman.guess_num} chances left. Guess"
+  letter = gets.chomp
+  hangman.game_run (letter)
+  if hangman.word_match
+    puts "Congratulations, nicely done!"
+    break
+  end
+end
+if hangman.guess_num == 0 && !hangman.word_match
+  puts "Sorry dodo, you're out of chances and brains as it seems"
+end  
