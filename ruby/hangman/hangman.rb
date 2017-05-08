@@ -28,31 +28,44 @@ a.  CM: Store letter in another reject_array
 #Class & its Methods
 
 class Game 
-  def initialize
+  attr_reader: guess_num
+
+  def initialize (word)
+    puts "Initializing Game instance ..."
+    @word = word
+    @length = word.length
+    @guess_num = 2 * word.length
+    @word_array = []
+    @guess_array = []
+    reject_array = []
 
   end
 
-  def wordsplit (word)
-    word_array = word.chars
+  def wordsplit
+    @word_array = @word.chars
   end
 
-  def wordlength (word)
-    length = word.length
+  def guess_array 
+    @guess_array = Array.new(@length,'_')
   end
 
-  def guess_array (length)
-    guess_array = Array.new(length,'_')
-  end
+  def match_letter (letter)
+    if !(@word_array.include?(letter)
+      @reject_array << letter 
+    elsif 
 
 end
 
 
-
-
-
 #Driver Code
-hangman = Game.new
+
 puts "User 1, what word would you like User 2 to guess?"
 word = gets.chomp
-hangman.wordsplit (word)
+hangman = Game.new (word)
+puts "User 2, you have #{guess_num} number of chances to guess the correct letters."
+puts "Guess a letter: "
+letter = gets.chomp
+hangman.match_letter (letter)
+
+
 
