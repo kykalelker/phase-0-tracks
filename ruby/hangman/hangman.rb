@@ -90,7 +90,7 @@ end
 
 #Driver Code
 
-word = "rhythm"
+word = "rhyme"
 hangman = Game.new (word)
 hangman.wordsplit
 hangman.guess_array
