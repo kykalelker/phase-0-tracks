@@ -96,3 +96,20 @@ p add_item(market,"bread", 2)
 p remove_item(market,"Lemonade")
 p update_quantity(market,"Ice_Cream", 1)
 print_list(market)
+
+=begin
+Release 4
+1. Pseudocode is best when it is as specific to the work needed to be done as possible.
+Yet it needs to be in plain English, such that anyone can use it to code in any language.
+2. It was easier to work with arrays for this challenge. Release 2 stumped us to the point 
+that we almost felt that we accomplished release 2 & 3 when we actually managed to get our 
+code working.
+3. Unless expressly told what to return, a method returns the last value of the last expression
+it evaluates to.
+4. Variables, strings, integers, arrays, hashes, other methods can all be passed as arguments 
+to methods.
+5. Information can be passed between methods by passing other methods as arguments or by 
+equating one method to a variable and using that as an argument for another.
+6. Pseudocode was solidified. Using block code with hashes is still confusing.
+=end
+
