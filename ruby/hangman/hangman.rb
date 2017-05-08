@@ -49,10 +49,10 @@ class Game
   end
 
 
-    def match_letter (letter)
+  def match_letter (letter)
     if !(@word_array.include?(letter))
       @reject_array << letter
-      puts "You guessed wrong. Guess again"
+      puts "You guessed wrong."
     else
       @word_array.each_index.select do |i| 
         if @word_array[i]==letter
@@ -78,9 +78,11 @@ hangman = Game.new (word)
 hangman.wordsplit
 hangman.guess_array
 puts "User 2, you have #{hangman.guess_num} chances to guess the correct letters."
+
 puts "Guess a letter: "
 letter = gets.chomp
 hangman.match_letter (letter)
+puts "You have #{hangman.guess_num} chances left. Guess again"
 
 
 
