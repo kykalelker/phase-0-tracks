@@ -28,7 +28,7 @@ a.  CM: Store letter in another reject_array
 #Class & its Methods
 
 class Game 
-  attr_reader: guess_num
+  attr_reader :guess_num
 
   def initialize (word)
     puts "Initializing Game instance ..."
@@ -37,8 +37,7 @@ class Game
     @guess_num = 2 * word.length
     @word_array = []
     @guess_array = []
-    reject_array = []
-
+    @reject_array = []
   end
 
   def wordsplit
@@ -49,10 +48,24 @@ class Game
     @guess_array = Array.new(@length,'_')
   end
 
-  def match_letter (letter)
-    if !(@word_array.include?(letter)
-      @reject_array << letter 
-    elsif 
+
+    def match_letter (letter)
+    if !(@word_array.include?(letter))
+      @reject_array << letter
+      puts "You guessed wrong. Guess again"
+    else
+      @word_array.each_index.select do |i| 
+        if @word_array[i]==letter
+          position = i
+          @guess_array[i] = letter
+        end
+      end
+      puts "Your current word is:"
+      puts @guess_array.join(" ")
+    end
+    @guess_num -= 1
+    @guess_array
+  end
 
 end
 
@@ -62,10 +75,13 @@ end
 puts "User 1, what word would you like User 2 to guess?"
 word = gets.chomp
 hangman = Game.new (word)
-puts "User 2, you have #{guess_num} number of chances to guess the correct letters."
+hangman.wordsplit
+hangman.guess_array
+puts "User 2, you have #{hangman.guess_num} chances to guess the correct letters."
 puts "Guess a letter: "
 letter = gets.chomp
 hangman.match_letter (letter)
+
 
 
 
