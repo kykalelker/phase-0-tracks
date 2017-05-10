@@ -8,3 +8,16 @@
 //  e. Store resulting string in a variable
 //3. print new variable if a condition is true
 
+
+function reverse(string) {
+  var rev_string = null
+  for (var i = string.length; i >= 0; i--) {
+    rev_string = rev_string + string[i];
+  };
+  return rev_string;
+}
+
+var str = "Anybody";
+
+console.log(reverse(str));
+
