@@ -49,31 +49,23 @@
 
 //Release 1: Business Logic for Object comparison
 function objectCompare (obj1, obj2) {
-  for (x in obj1) {
-    for (y in obj2) {
-      if ((x == y) && (obj1[x] == obj2[y])){
-        var match = true;
-        console.log(x,obj1[x],y,obj2[y],match);
-      }
-      else {
-       var match = false;
-       console.log(x,obj1[x],y,obj2[y],match);
-      } 
-      break;
+  var match = false;
+    for (x in obj1) {
+      for (y in obj2) {
+        if ((x == y) && (obj1[x] == obj2[y])){
+          match = true;
+          break;
+        }
+      }    
     }
-  }
   return match;
 }
-
-
-
 
 //Release 1: Driver Code for Object comparison
 var dog = {name: "Nocky", age: 2, isPet: true, hasLegs: 4};
 var cat = {name: "Maumau", age: 4, isPet: true, hasLegs: 4};
 var kid = {name: "Anika", age: 2, isPet: false, hasLegs: 2}; 
 
-//console.log(objectCompare(dog,cat));
-//console.log(objectCompare(cat,kid));
-//console.log(objectCompare(dog,kid));
-objectCompare(dog,kid)
+console.log(objectCompare(dog,cat));
+console.log(objectCompare(cat,kid));
+console.log(objectCompare(dog,kid));
