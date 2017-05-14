@@ -72,18 +72,22 @@
 //Release 2: Pseudocode
 //Declare and assign a value to array length variable
 //Define a function that takes as its parameter the array length variable
-// - define a word length and use a random number generator to assign it a random integer value between 1 and 10
-// - using a loop create 
-
+// - declare an empty word array
+// - declare a string variable assigning all 26 letter of the alphabet in the form of a single string as its value
+// - for every word until a maximum of arraylength number of words
+//    - using a random number generator, generate a number and assign it to a word length variable
+//    - using another random number generator generate an index value to select a letter from the string variable and append to the word
+// - Once all words are generated, return the word array
+//Call the word generator function and print result 
 
 function wordGenerator(num) {
   var wordArray = [];
+  letterSet = "abcdefghijklmnopqrstuvwxyz";
   for (i = 0; i < num; i++) {
-   var wordLength = Math.floor(Math.random() * 10);
+   var wordLength = Math.ceil(Math.random() * 10);
    var word = "";
    for (j = 1; j <= wordLength; j++) {
-    letterSet = "abcdefghijklmnopqrstuvwxyz";
-    index = Math.floor(Math.random() * 26);
+    index = Math.round(Math.random() * 26);
     word += letterSet[index];
    }
    wordArray[i] = word;
