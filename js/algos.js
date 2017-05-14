@@ -10,17 +10,17 @@
 //Call function passing the phrase array as an argument
 
 //Release 0: Business Logic for Longest string
-//function longestPhrase(phraseArr) {
-//  var maxLength = 0
-//  var staticIndex = 0
-//  for (var i = 0; i < phraseArr.length; i++) {
-//    if (phraseArr[i].length > maxLength) {
-//      maxLength = phraseArr[i].length;
-//      staticIndex = i;
-//    }
-//  }
-//  return phraseArr[staticIndex];
-//}
+function longestPhrase(phraseArr) {
+  var maxLength = 0
+  var staticIndex = 0
+  for (var i = 0; i < phraseArr.length; i++) {
+    if (phraseArr[i].length > maxLength) {
+      maxLength = phraseArr[i].length;
+      staticIndex = i;
+    }
+  }
+  return phraseArr[staticIndex];
+}
 //
 ////Release 0: Driver Code for Longest string
 //var greetingPhrases = ["hi", "hello", "howdydo", "wassup", "hiya", "ola"];
@@ -87,7 +87,7 @@ function wordGenerator(num) {
    var wordLength = Math.ceil(Math.random() * 10);
    var word = "";
    for (j = 1; j <= wordLength; j++) {
-    index = Math.round(Math.random() * 26);
+    index = Math.floor(Math.random() * 26);
     word += letterSet[index];
    }
    wordArray[i] = word;
@@ -95,8 +95,13 @@ function wordGenerator(num) {
   return wordArray;
 }
 
-numberOfWords = 3;
-console.log(wordGenerator(numberOfWords));
+for (x = 1; x <= 10; x++){
+numberOfWords = 6;
+arrayOfWords = (wordGenerator(numberOfWords));
+console.log(arrayOfWords);
+console.log("The longest word in the array of random words is " + longestPhrase(arrayOfWords));
+}
+
 
 
 
