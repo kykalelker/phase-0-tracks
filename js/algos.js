@@ -21,8 +21,8 @@
 //  }
 //  return phraseArr[staticIndex];
 //}
-
-//Release 0: Driver Code for Longest string
+//
+////Release 0: Driver Code for Longest string
 //var greetingPhrases = ["hi", "hello", "howdydo", "wassup", "hiya", "ola"];
 //console.log(greetingPhrases);
 //console.log("The longest greeting in the array of greeting phrases is " + longestPhrase(greetingPhrases));
@@ -39,33 +39,61 @@
 //Release1: Pseudocode
 //Declare 2 objects with 3-4 datapoints
 //Define a function that compares the two objects for a matching key-value pair
+// - set a flag variable to false
 // - for every datapoint in object 1 
-// - iterate through all datapoints in object 2 comparing them to the static datapoint of object 1
-// - if there is a match, return the value true, otherwise return false
+//  - iterate through all datapoints in object 2 comparing them to the static datapoint of object 1
+//    - if there is a match, change flag to true 
+// - return the flag,
 //Call function passing the objects as arguments
 
-
-
-
 //Release 1: Business Logic for Object comparison
-function objectCompare (obj1, obj2) {
-  var match = false;
-    for (x in obj1) {
-      for (y in obj2) {
-        if ((x == y) && (obj1[x] == obj2[y])){
-          match = true;
-          break;
-        }
-      }    
-    }
-  return match;
+//function objectCompare(obj1, obj2) {
+//  var match = false;
+//    for (x in obj1) {
+//      for (y in obj2) {
+//        if ((x == y) && (obj1[x] == obj2[y])){
+//          match = true;
+//        }
+//      }    
+//    }
+//  return match;
+//}
+//
+////Release 1: Driver Code for Object comparison
+//var dog = {name: "Nocky", age: 2, isPet: true, hasLegs: 4};
+//var cat = {name: "Maumau", age: 4, isPet: true, hasLegs: 4};
+//var kid = {name: "Anika", age: 2, isPet: false, hasLegs: 2}; 
+//
+//console.log(objectCompare(dog,cat));
+//console.log(objectCompare(cat,kid));
+//console.log(objectCompare(dog,kid));
+
+
+//Release 2: Pseudocode
+//Declare and assign a value to array length variable
+//Define a function that takes as its parameter the array length variable
+// - define a word length and use a random number generator to assign it a random integer value between 1 and 10
+// - using a loop create 
+
+
+function wordGenerator(num) {
+  var wordArray = [];
+  for (i = 0; i < num; i++) {
+   var wordLength = Math.floor(Math.random() * 10);
+   var word = "";
+   for (j = 1; j <= wordLength; j++) {
+    letterSet = "abcdefghijklmnopqrstuvwxyz";
+    index = Math.floor(Math.random() * 26);
+    word += letterSet[index];
+   }
+   wordArray[i] = word;
+  }
+  return wordArray;
 }
 
-//Release 1: Driver Code for Object comparison
-var dog = {name: "Nocky", age: 2, isPet: true, hasLegs: 4};
-var cat = {name: "Maumau", age: 4, isPet: true, hasLegs: 4};
-var kid = {name: "Anika", age: 2, isPet: false, hasLegs: 2}; 
+numberOfWords = 3;
+console.log(wordGenerator(numberOfWords));
 
-console.log(objectCompare(dog,cat));
-console.log(objectCompare(cat,kid));
-console.log(objectCompare(dog,kid));
+
+
+
