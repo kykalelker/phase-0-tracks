@@ -7,7 +7,7 @@
 // - if new string length is greater than max length, update the max length variable to the larger length and update the static index variable to the position of the longer word
 // - once the entire array has been parsed, return the phrase at the static index position of the array (this phrase will have the greatest length acc to the max length variable)
 
-
+//Business Logic
 function longestPhrase(phraseArr) {
   var maxLength = 0
   var staticIndex = 0
@@ -20,7 +20,16 @@ function longestPhrase(phraseArr) {
   return phraseArr[staticIndex];
 }
 
-var phrases = ["hi", "hello", "howdydo", "wassup", "hiya",
+//Driver Code
+var greetingPhrases = ["hi", "hello", "howdydo", "wassup", "hiya",
 "ola"];
-console.log(phrases);
-console.log("The longest word in the array of phrases is " + longestPhrase(phrases));
+console.log(greetingPhrases);
+console.log("The longest greeting in the array of greeting phrases is " + longestPhrase(greetingPhrases));
+
+var transportationPhrases = ["car", "helicopter", "airplane", "boat", "train", "motorbike"];
+console.log(transportationPhrases);
+console.log("The longest transportation in the array of transportation phrases is " + longestPhrase(transportationPhrases));
+
+var roadPhrases = ["road", "way", "drive", "parkway", "avenue", "street"];
+console.log(roadPhrases);
+console.log("The longest road in the array of road phrases is " + longestPhrase(roadPhrases));
