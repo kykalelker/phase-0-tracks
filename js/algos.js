@@ -21,19 +21,19 @@ function longestPhrase(phraseArr) {
   }
   return phraseArr[staticIndex];
 }
-//
-////Release 0: Driver Code for Longest string
-//var greetingPhrases = ["hi", "hello", "howdydo", "wassup", "hiya", "ola"];
-//console.log(greetingPhrases);
-//console.log("The longest greeting in the array of greeting phrases is " + longestPhrase(greetingPhrases));
-//
-//var transportationPhrases = ["car", "helicopter", "airplane", "boat", "train", "motorbike"];
-//console.log(transportationPhrases);
-//console.log("The longest transportation in the array of transportation phrases is " + longestPhrase(transportationPhrases));
-//
-//var roadPhrases = ["road", "way", "drive", "parkway", "avenue", "street"];
-//console.log(roadPhrases);
-//console.log("The longest road in the array of road phrases is " + longestPhrase(roadPhrases));
+
+//Release 0: Driver Code for Longest string
+var greetingPhrases = ["hi", "hello", "howdydo", "wassup", "hiya", "ola"];
+console.log(greetingPhrases);
+console.log("The longest greeting in the array of greeting phrases is " + longestPhrase(greetingPhrases));
+
+var transportationPhrases = ["car", "helicopter", "airplane", "boat", "train", "motorbike"];
+console.log(transportationPhrases);
+console.log("The longest transportation in the array of transportation phrases is " + longestPhrase(transportationPhrases));
+
+var roadPhrases = ["road", "way", "drive", "parkway", "avenue", "street"];
+console.log(roadPhrases);
+console.log("The longest road in the array of road phrases is " + longestPhrase(roadPhrases));
 
 
 //Release1: Pseudocode
@@ -47,26 +47,26 @@ function longestPhrase(phraseArr) {
 //Call function passing the objects as arguments
 
 //Release 1: Business Logic for Object comparison
-//function objectCompare(obj1, obj2) {
-//  var match = false;
-//    for (x in obj1) {
-//      for (y in obj2) {
-//        if ((x == y) && (obj1[x] == obj2[y])){
-//          match = true;
-//        }
-//      }    
-//    }
-//  return match;
-//}
-//
-////Release 1: Driver Code for Object comparison
-//var dog = {name: "Nocky", age: 2, isPet: true, hasLegs: 4};
-//var cat = {name: "Maumau", age: 4, isPet: true, hasLegs: 4};
-//var kid = {name: "Anika", age: 2, isPet: false, hasLegs: 2}; 
-//
-//console.log(objectCompare(dog,cat));
-//console.log(objectCompare(cat,kid));
-//console.log(objectCompare(dog,kid));
+function objectCompare(obj1, obj2) {
+  var match = false;
+    for (x in obj1) {
+      for (y in obj2) {
+        if ((x == y) && (obj1[x] == obj2[y])){
+          match = true;
+        }
+      }    
+    }
+  return match;
+}
+
+//Release 1: Driver Code for Object comparison
+var dog = {name: "Nocky", age: 2, isPet: true, hasLegs: 4};
+var cat = {name: "Maumau", age: 4, isPet: true, hasLegs: 4};
+var kid = {name: "Anika", age: 2, isPet: false, hasLegs: 2}; 
+
+console.log(objectCompare(dog,cat));
+console.log(objectCompare(cat,kid));
+console.log(objectCompare(dog,kid));
 
 
 //Release 2: Pseudocode
@@ -80,6 +80,7 @@ function longestPhrase(phraseArr) {
 // - Once all words are generated, return the word array
 //Call the word generator function and print result 
 
+//Release 2: Business logic for random word generation
 function wordGenerator(num) {
   var wordArray = [];
   letterSet = "abcdefghijklmnopqrstuvwxyz";
@@ -95,6 +96,7 @@ function wordGenerator(num) {
   return wordArray;
 }
 
+//Release 2: Driver code for random word generation
 for (x = 1; x <= 10; x++){
 numberOfWords = 6;
 arrayOfWords = (wordGenerator(numberOfWords));
