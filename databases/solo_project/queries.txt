@@ -41,3 +41,6 @@ Zoe Saldana|Law & Order: SVU
 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 
 DELETE FROM actors WHERE actor_name = "Zoe Saldana";
+
+Release 3:
+
