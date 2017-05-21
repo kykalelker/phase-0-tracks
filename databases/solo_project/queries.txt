@@ -1,0 +1,89 @@
+Release 2:
+1. Display the information in one table (either table is fine).
+
+SELECT * FROM actors;
+1|Jessica Chastain|false|1
+2|Bradley Cooper|false|2
+3|Armie Hammer|false|1
+4|Jennifer Lawrence|true|3
+5|Zoe Saldana|false|2
+
+SELECT * FROM shows;
+1|Veronica Mars|2004
+2|Law & Order: SVU|1999
+3|Medium|2005
+
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE actors SET oscar_winner="true" WHERE actor_name="Jessica Chastain";
+
+
+3. Display the information in both tables using one query.
+
+SELECT * FROM actors, shows WHERE actors.show_id = shows.id;
+1|Jessica Chastain|true|1|1|Veronica Mars|2004
+2|Bradley Cooper|false|2|2|Law & Order: SVU|1999
+3|Armie Hammer|false|1|1|Veronica Mars|2004
+4|Jennifer Lawrence|true|3|3|Medium|2005
+5|Zoe Saldana|false|2|2|Law & Order: SVU|1999
+
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT actors.actor_name, shows.show_name FROM actors JOIN shows ON actors.show_id = shows.id;
+Jessica Chastain|Veronica Mars
+Bradley Cooper|Law & Order: SVU
+Armie Hammer|Veronica Mars
+Jennifer Lawrence|Medium
+Zoe Saldana|Law & Order: SVU
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM actors WHERE actor_name = "Zoe Saldana";
+
+
+
+Release 3:
+1. Full Join
+
+SELECT actors.actor_name, shows.show_name FROM actors FULL OUTER JOIN shows ON actors.show_id = shows.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+2. Left Join
+
+SELECT actors.actor_name, shows.show_name FROM actors LEFT JOIN shows ON actors.show_id = shows.id;
+Jessica Chastain|Veronica Mars
+Bradley Cooper|Law & Order: SVU
+Armie Hammer|Veronica Mars
+Jennifer Lawrence|Medium
+ 
+
+3. Left Join (all)
+
+SELECT * FROM actors LEFT JOIN shows ON actors.show_id = shows.id;
+1|Jessica Chastain|true|1|1|Veronica Mars|2004
+2|Bradley Cooper|false|2|2|Law & Order: SVU|1999
+3|Armie Hammer|false|1|1|Veronica Mars|2004
+4|Jennifer Lawrence|true|3|3|Medium|2005
+
+
+4. Inner Join
+
+SELECT actors.actor_name, shows.show_name FROM actors INNER JOIN shows ON actors.show_id = shows.id;
+Jessica Chastain|Veronica Mars
+Bradley Cooper|Law & Order: SVU
+Armie Hammer|Veronica Mars
+Jennifer Lawrence|Medium
+
+
+5. Inner Join (all)
+
+SELECT * FROM actors INNER JOIN shows ON actors.show_id = shows.id;
+1|Jessica Chastain|true|1|1|Veronica Mars|2004
+2|Bradley Cooper|false|2|2|Law & Order: SVU|1999
+3|Armie Hammer|false|1|1|Veronica Mars|2004
+4|Jennifer Lawrence|true|3|3|Medium|2005
+
