@@ -44,3 +44,35 @@ DELETE FROM actors WHERE actor_name = "Zoe Saldana";
 
 Release 3:
 
+Full Join
+SELECT actors.actor_name, shows.show_name FROM actors FULL OUTER JOIN shows ON actors.show_id = shows.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+Left Join
+SELECT actors.actor_name, shows.show_name FROM actors LEFT JOIN shows ON actors.show_id = shows.id;
+Jessica Chastain|Veronica Mars
+Bradley Cooper|Law & Order: SVU
+Armie Hammer|Veronica Mars
+Jennifer Lawrence|Medium
+
+Left Join (all)
+SELECT * FROM actors LEFT JOIN shows ON actors.show_id = shows.id;
+1|Jessica Chastain|true|1|1|Veronica Mars|2004
+2|Bradley Cooper|false|2|2|Law & Order: SVU|1999
+3|Armie Hammer|false|1|1|Veronica Mars|2004
+4|Jennifer Lawrence|true|3|3|Medium|2005
+
+Inner Join
+SELECT actors.actor_name, shows.show_name FROM actors INNER JOIN shows ON actors.show_id = shows.id;
+Jessica Chastain|Veronica Mars
+Bradley Cooper|Law & Order: SVU
+Armie Hammer|Veronica Mars
+Jennifer Lawrence|Medium
+
+Inner Join (all)
+SELECT * FROM actors INNER JOIN shows ON actors.show_id = shows.id;
+1|Jessica Chastain|true|1|1|Veronica Mars|2004
+2|Bradley Cooper|false|2|2|Law & Order: SVU|1999
+3|Armie Hammer|false|1|1|Veronica Mars|2004
+4|Jennifer Lawrence|true|3|3|Medium|2005
+
