@@ -35,13 +35,6 @@ def add_chores(todo, jobs_to_do, task_status, minutes, person_num)
   todo.execute("INSERT INTO chores (task, status_done, time_taken, respons_id) VALUES (?,?,?,?)", [jobs_to_do, task_status, minutes, person_num])
 end
 
-# modify responsibility and chore tables
-def mod_respons()
-end
-
-def mod_chores()
-end
-
 # driver code to populate tables
 puts "How many chores would you like to assign?"
 num_of_chores = gets.chomp.to_i
@@ -63,11 +56,39 @@ num_of_chores.times do
   add_chores(todo, jobs_to_do, task_status, minutes, person_num)
 end
 
-# retrieve data
+# retrieve data after creation
 chores = todo.execute("SELECT chores.task, chores.status_done, chores.time_taken, responsibility.name FROM chores JOIN responsibility ON chores.respons_id = responsibility.id")
 p chores
 
-# driver code to update/modify tables
+## modify chore table
+#def mod_chores(todo, chore_key, key, value)
+#  todo.execute("UPDATE chores SET #{key} = #{value} WHERE task=#{chore_key}")
+#end
+#
+## driver code to update/modify tables
 #puts "Would you like to modify your choreslist? (y/n)"
 #if gets.chomp == "y"
-#  puts What would you like to update?
+#  puts "Which chore would you like to update for?"
+#  chore_key = gets.chomp
+#  if !(chore_key=="none")
+#    puts "What would you like to update? (chore/status/minutes/responsibility)"
+#    key = gets.chomp
+#    puts "what would you like to change #{key} to?"
+#    value = gets.chomp
+#    if key == "chore" 
+#      key = "task"
+#    elsif key == "status" 
+#      key = "status_done"
+#    elsif key == "minutes"
+#      key = "time_taken"
+#    elsif key == "responsibility"
+#      key = "respons_id"
+#    end
+#    mod_chores(todo, chore_key, key, value)
+#  else puts "okay, thank you"
+#  end
+#end
+#
+## retrieve data after updation
+#chores = todo.execute("SELECT chores.task, chores.status_done, chores.time_taken, responsibility.name FROM chores JOIN responsibility ON chores.respons_id = responsibility.id")
+#p chores
