@@ -26,7 +26,16 @@ todo.execute(create_responsibility_table)
 todo.execute(create_chore_table)
 
 # populate responsibility and chore tables
+def add_respons(todo, temp)
+  todo.execute("INSERT INTO responsibility (name) VALUES (?)", [temp])
+end
+
+def add_chores(todo, jobs_to_do, minutes, person_num)
+  todo.execute("INSERT INTO chores (task, time_taken, respons_id) VALUES (?,?,?)", [jobs_to_do, minutes, person_num])
+end
 
 # driver code
 
 # retrieve data
+chores = todo.execute("SELECT chores.task, chores.time_taken, responsibility.name FROM chores JOIN responsibility ON chores.respons_id = responsibility.id")
+p chores
