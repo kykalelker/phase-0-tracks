@@ -10,3 +10,16 @@ function changeFontColor() {
 }
 
 changeFontColor();
+
+var extraInfo = document.getElementById("extra_info");
+extraInfo.insertAdjacentHTML('afterbegin', '<h3>Colors Available</h3>');
+
+
+
+var colors = document.getElementsByTagName('b');
+var color = colors[0];
+color.onclick = function() {
+  var images = document.getElementsByTagName('img');
+var image = images[0];
+  image.style.display = "block";
+}
