@@ -5,4 +5,7 @@ Look up jquery.com
 Look up codeacademy
 Look up github for jquery
 
-Try basic commands
+Release 1
+
+I haven't really understood JQuery and how it differs from Javascript in terms of its syntax. Reading up on all the websites listed did not help. At the most Codeacademy helped a little.
+
