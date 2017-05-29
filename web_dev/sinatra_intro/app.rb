@@ -45,7 +45,7 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
-
+=end
  
 #Release 0
 #1.
@@ -65,7 +65,6 @@ get '/great_job/' do
   end
 end
 
-
 #3 
 get '/:number_1/plus/:number_2' do
   number_1 = params[:number_1].to_i
@@ -73,4 +72,6 @@ get '/:number_1/plus/:number_2' do
   total = number_1 + number_2
   "#{params[:number_1]} plus #{params[:number_2]} is #{total}"
 end
-=end
+
+
+
