@@ -8,6 +8,7 @@ db.results_as_hash = true
 # write a basic GET route
 # add a query parameter
 # GET /
+=begin
 get '/' do
   "#{params[:name]} is #{params[:age]} years old."
 end
@@ -44,3 +45,26 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+ 
+#Release 0
+#1.
+get '/contact/:address' do
+  address = params[:address]
+  "The address you entered is #{address}"
+end
+
+#2.
+get '/great_job/' do
+  name = params[:name]
+  p params
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+=end
+
+
+
